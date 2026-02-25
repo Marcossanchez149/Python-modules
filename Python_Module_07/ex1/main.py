@@ -1,14 +1,18 @@
+#!/usr/bin/env python3
+
 from ex0.CreatureCard import CreatureCard
 from ex1.SpellCard import SpellCard
 from ex1.ArtifactCard import ArtifactCard
 from ex1.Deck import Deck
+
 
 def main():
     print("=== DataDeck Deck Builder ===")
     print("Building deck with different card types...")
     deck = Deck()
     spell = SpellCard("Lightning Bolt", 3, "Common", "Deal 3 damage to target")
-    artifact = ArtifactCard("Mana Crystal", 2, "Rare", 5, "Permanent: +1 mana per turn")
+    artifact = ArtifactCard("Mana Crystal", 2, "Rare", 5, "Permanent: "
+                            "+1 mana per turn")
     creature = CreatureCard("Fire Dragon", 5, "Legendary", 7, 5)
     deck.add_card(spell)
     deck.add_card(artifact)
@@ -25,6 +29,7 @@ def main():
     print(f"Drew: {card3.name} (Creature)")
     print(f"Play result: {card3.play({})}")
     print("Polymorphism in action: Same interface, different card behaviors!")
+
 
 if __name__ == "__main__":
     main()
